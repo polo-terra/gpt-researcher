@@ -8,14 +8,6 @@ type THeroProps = {
   handleDisplayResult: (query : string) => void;
 };
 
-// PLEASE NOTE - there is a HUGE user input VULNERABILITY HERE that should be fixed ASAP.
-// We are not sanitizing the user input and we are allowing the user to input arbitrary code.
-// This is a security risk and we need to fix it.
-// We are also not validating the user input and we are allowing the user to input arbitrary code.
-// This is a security risk and we need to fix it.
-// We are also not validating the user input and we are allowing the user to input arbitrary code.
-// This is a security risk and we need to fix it.
-
 const Hero: FC<THeroProps> = ({
   promptValue,
   setPromptValue,

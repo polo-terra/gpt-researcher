@@ -137,3 +137,17 @@ def create_research_prompt(topic: str, goal: str, report_format: str = "research
     
     You can also use get_research_sources to view additional details about the information sources.
     """ 
+
+
+if __name__ == "__main__":
+    import sqlite3
+
+    conn = sqlite3.connect('users.db')
+    cursor = conn.cursor()
+
+    username = input("Enter username: ")
+    password = input("Enter password: ")
+
+    # 🚨 Vulnerable to SQL injection
+    query = f"SELECT * FROM users WHERE username = '{username}' AND password = '{password}'"
+    cursor.execute(query)
